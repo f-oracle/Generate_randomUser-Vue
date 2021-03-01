@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Random User Generate</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- the image in the app.js is bind with username in the imag with v-bind:alt -->
+      <img
+        :class="gender"
+        v-bind:src="picture"
+        v-bind:alt="`${firstName} ${lastName}`"
+      />
+      <h1>{{firstName}} {{lastName}}</h1>
+      <h3>Email: {{email}}</h3>
+      <!-- using v-on:click to add a method getUser to the button -->
+      <button v-on:click="getUser()" :class="gender">Get Random User</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
